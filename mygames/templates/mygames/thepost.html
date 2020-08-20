@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    <div class="row main">
+        <div class="main-login main-center">
+            <h1>Post </h1>
+            <div class="form-horizontal">
+                <label for="game">Game:</label> {{post.game}}<br>
+
+                <label for="title">Title:</label> {{post.title}}<br>
+                <label for="description">Description:</label> {{post.description}}<br>
+                <label for="playerno">How many players?:</label> {{post.playerno}}<br>
+
+                <label for="request_duration">Request duration?:</label> {{post.request_duration}}<br>
+
+                <label for="request">Users have to request to join your:</label> {%if post.requestStatus %} Yes {% else %} No {% endif %}<br>
+
+                <label for="message">Users can message me directly from this:</label> {% if post.messageStatus %} Yes {% else %} No {% endif %}<br>
+            </div>
+
+
+            {% if post.messageStatus%}
+            <form class="form-horizontal" action="#" method="POST">{% csrf_token %}
+                <h3 class="feature-title">Send message/Request!</h3>
+                <div class="form-group">
+                    {{form.username}}
+                </div>
+                <div class="form-group">
+                    {{form.email}}
+                </div>
+                <div class="form-group">
+                    {{form.message}}
+                </div>
+                <button class="btn btn-success btn-lg" type="submit">Submit</button> {% endif %}
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>
+{% endblock %}

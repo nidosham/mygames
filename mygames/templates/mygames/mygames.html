@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<h3>My Games</h3>
+<div class="row">
+    {% for g in boughtGames %}
+    <div class="col-md-3">
+        <ul>
+            <li>{{g.game.name}}</li>
+            <li>{{g.game.category}}</li>
+            <li><a href="/mygames/playerhome/gameplay/{{g.game.id}}"><button class="btn-success"> Play it </button></a></li>
+
+
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

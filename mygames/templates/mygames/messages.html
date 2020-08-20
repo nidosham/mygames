@@ -1,0 +1,20 @@
+"{% extends "base.html" %} {% block content %}
+<div class="container">
+    <div class="content-message">
+        <table width="600" border="1" cellspacing="2" cellpadding="2">
+            <tr>
+                <th>Messages</th>
+
+            </tr>
+            {% for m in messageList %}
+            <tr>
+                <td>{{m.contact}} sent you a message on {{m.post}}
+                    <a href="/mygames/mymessages/{{m.id}}" Class="btn btn-success btn-sm">
+                                       Read Message</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+{% endblock %}

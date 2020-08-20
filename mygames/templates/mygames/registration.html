@@ -1,0 +1,99 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    <div class="row main">
+        <div class="panel-heading">
+            <div class="panel-title text-center">
+                {% if flag == True %}
+                <h1 class="title">You Registered Successfully</h1>
+                <a style="font-size: 16px;color: rgb(248, 244, 244);" href="/mygames/login">Login</a>
+                <div class="login-register">
+                    <a href="/mygames">Login</a>
+                </div>
+                {% else %}
+                <h1 class="title">Online games Collaboration</h1>
+                <hr />
+            </div>
+        </div>
+        <div class="main-login main-center">
+            <form class="form-horizontal" method="post" action="#">{% csrf_token %}
+                <div class="form-group">
+                    <label for="username" class="cols-sm-2 control-label">Username</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span> {{form.username}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="cols-sm-2 control-label">Password</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span> {{form.password}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span> {{form.confirmPassword}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span> {{form.email}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">Select what games you play:</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span> {{form.games}}
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">Select your favorites of these: </label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span> {{form.favourite}}
+
+
+                        </div>
+                    </div>
+                </div>
+                <label> Platform</label>
+                <div class="form-group">
+                    <div>
+                        <h1>Play </h1>
+                        <a class="a" href="https://my.account.sony.com/central/signin/?service_entity=urn%3Aservice-entity%3Apsn&ui=pr&service_logo=ps&smcid=web%3Asocial%3Atoolbar&response_type=code&scope=psn%3As2s%20user%3Aaccount.communication.get%20user%3Aaccount.onlineId.get%20user%3Aaccount.get%20openid&client_id=7a3b3b9d-da2c-4315-a558-d40d04101b39&request_locale=en_US&redirect_uri=https%3A%2F%2Fio.playstation.com%2Fcentral%2Fauth%2FacceptLogin&auth_ver=v3&error=login_required&error_code=4165&error_description=User+is+not+authenticated&no_captcha=true&cid=a1d69bf3-e2f7-4feb-9e40-f674db44b337#/signin/ca?entry=ca">login
+                            into PS4</a>
+                        <a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&rver=7.3.6963.0&wp=MBI_SSL&wreply=https:%2f%2faccount.xbox.com%2fen-us%2faccountcreation%3freturnUrl%3dhttps%253a%252f%252fwww.xbox.com%253a443%252fen-US%252f%26ru%3dhttps%253a%252f%252fwww.xbox.com%252fen-US%252f%26rtc%3d1%26csrf%3djy3Ddg-C7tN0IU-rOpVAJ0fFmJPfUvHRdxW3gk-TRe5AFjoADJCtkoVyQMxW1pj_lTXUio9NjWj-Qo7OIEzxa_hChog1&lc=1033&id=292543&aadredir=1">Login
+                            into Xbox</a>
+                        <a href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3Dlogin%252F%253Fredir%253Dapp%25252F353370%25252FSteam_Controller%25252F%2526redir_ssl%253D1%2526snr%253D1_5_9__global-header%26redir_ssl%3D1%26snr%3D1_60_4__global-header&redir_ssl=1">Login
+                            into Steam</a><br>
+                    </div>
+
+                </div>
+                <div class="form-group ">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                </div>
+                <div class="login-register  login-reg text-center">
+                    <a style="font-size: 16px;color: rgb(248, 244, 244);" href="/mygames/login">Login</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+{% endif %} {% endblock %}

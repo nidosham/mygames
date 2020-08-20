@@ -1,0 +1,18 @@
+ {% extends "base.html" %} {% block content %}
+
+<div class="content" style="align-content: center;">
+    <h1>Profile</h1>
+    <button>Edit</button> {{uname}}
+    <button>Send</button>
+    <button>Post</button>
+    <button>Games</button> {% for p in postList %}
+    <div class="postdiv">
+        <img src="../static{{p.game.image_path}}" width="200" height="150">
+        <a href="post/{{p.id}}/" class="btn btn-lg btn-success" role="button">Edit</a><br><br>
+        <h2> {{p.title}}</h2>
+        Post Created on {{p.published_date}}
+        <hr style="border: 2px solid rgb(7, 7, 7); width:100%;text-align:left;margin-left:0">{{p.description}}
+
+    </div>
+</div>
+{% endfor %} {% endblock %}

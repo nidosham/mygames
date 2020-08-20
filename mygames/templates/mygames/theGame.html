@@ -1,0 +1,36 @@
+{% extends "base.html" %}{% block content %}
+<style>
+    alink {
+        background-color: black;
+        color: gold;
+        border: 2px solid;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+</style>
+
+
+<div class="row main">
+    <div class="main-login main-center">
+        <h1>Posts</h1>
+        <hr style="width: 100%;" /> <label for="game">Game:</label> {{game.name}}<br> {% for p in postList %}
+        <div class="postdiv">
+            {%if p.messageStatus %} <a href="post/messages/{{p.id}}/" class="btn btn-lg btn-success" role="button">Message</a>{% else %} {% endif %} {%if p.requestStatus %}<a href="post/{{p.id}}/" class="btn btn-lg btn-success" role="button">Request</a>            {% else %} {%endif %}
+            <br>
+            <img src="../static{{p.game.image_path}}" width="150" height="120"><br>
+            <strong> {{p.title}}</strong><br> Posted by {{p.author}} [verified/platform/rank] Created {{p.published_date}} ago
+            <hr style="border: 2px solid rgb(7, 7, 7);width:100%;text-align:left;margin-left:0"> {{p.description}}
+
+        </div>
+        {% endfor %}
+
+        <div>
+            <h1>Play </h1>
+            <a class="alink" href="https://my.account.sony.com/central/signin/?service_entity=urn%3Aservice-entity%3Apsn&ui=pr&service_logo=ps&smcid=web%3Asocial%3Atoolbar&response_type=code&scope=psn%3As2s%20user%3Aaccount.communication.get%20user%3Aaccount.onlineId.get%20user%3Aaccount.get%20openid&client_id=7a3b3b9d-da2c-4315-a558-d40d04101b39&request_locale=en_US&redirect_uri=https%3A%2F%2Fio.playstation.com%2Fcentral%2Fauth%2FacceptLogin&auth_ver=v3&error=login_required&error_code=4165&error_description=User+is+not+authenticated&no_captcha=true&cid=a1d69bf3-e2f7-4feb-9e40-f674db44b337#/signin/ca?entry=ca">login into PS4</a>
+            <a class="alink" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&rver=7.3.6963.0&wp=MBI_SSL&wreply=https:%2f%2faccount.xbox.com%2fen-us%2faccountcreation%3freturnUrl%3dhttps%253a%252f%252fwww.xbox.com%253a443%252fen-US%252f%26ru%3dhttps%253a%252f%252fwww.xbox.com%252fen-US%252f%26rtc%3d1%26csrf%3djy3Ddg-C7tN0IU-rOpVAJ0fFmJPfUvHRdxW3gk-TRe5AFjoADJCtkoVyQMxW1pj_lTXUio9NjWj-Qo7OIEzxa_hChog1&lc=1033&id=292543&aadredir=1">Login into Xbox</a>
+            <a class="alink" href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3Dlogin%252F%253Fredir%253Dapp%25252F353370%25252FSteam_Controller%25252F%2526redir_ssl%253D1%2526snr%253D1_5_9__global-header%26redir_ssl%3D1%26snr%3D1_60_4__global-header&redir_ssl=1">Login into Steam</a><br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

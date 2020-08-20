@@ -1,0 +1,64 @@
+{# This is base.html #}
+<!doctype html>{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- Website CSS style -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-tdeme.min.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="sidebar1">
+            <ul class="nav">
+                <td></td><a href="#">{{name}}</a></td>
+                <td><a href="#">Home</a></td>
+                <td><a href="message/">Message</a></td>
+                <td><a href="settings/">Setting</a></td>
+            </ul>
+            {% block content %} {% endblock %}
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
+                            <p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation and other interface
+                                components.
+                            </p>
+                            <p>For more straightforward sizing in CSS, we switch the global box-sizing value from content-box to border-box. </p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                            <p>1640 Riverside Drive, Hill Valley, California
+                                <br />info@mywebsite.com
+                                <br />+ 01 234 567 88
+                                <br />+ 01 234 567 89</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <h6 class="text-uppercase font-weight-bold">Personal Contact</h6>
+                            <p>Khalid
+                                <br />Kaalfahm@asu.edu
+                                <br />+1 480 388 5372</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright text-center">© 2019 Copyright: MyWebsite.com</div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
